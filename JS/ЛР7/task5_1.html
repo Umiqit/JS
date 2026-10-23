@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задания листа №5 — стилевые правила</title>
+    <!-- Пример, используя id — идентификатор: стилевое правило для элемента -->
+    <style>
+        #text {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задание 1 — динамическое изменение стилей</h1>
+
+    <div id="text">
+        Test<br><br>
+        test test<br>
+        test test<br>
+        test test<br>
+        test test<br>
+        test test<br><br>
+        test test<br>
+        test<br>
+        test test<br>
+        test<br>
+        test test<br><br>
+        Test
+    </div>
+
+    <script>
+        var el = document.getElementById("text");
+
+        // При загрузке: фон белый, цвет текста чёрный (стилевые правила по умолчанию)
+        window.onload = function () {
+            el.style.backgroundColor = "white";
+            el.style.color = "black";
+            el.style.fontSize = "16px";
+        };
+
+        // По щелчку: синий фон, синий текст
+        el.onclick = function () {
+            el.style.backgroundColor = "blue";
+            el.style.color = "blue";
+            el.style.fontSize = "16px";
+        };
+
+        // По наведению: фон белый, текст красный, курсив
+        el.onmouseover = function () {
+            el.style.backgroundColor = "white";
+            el.style.color = "red";
+            el.style.fontStyle = "italic";
+        };
+
+        // После того как убрали наведение мыши: текст зелёный
+        el.onmouseout = function () {
+            el.style.backgroundColor = "white";
+            el.style.color = "green";
+            el.style.fontStyle = "normal";
+        };
+    </script>
+</body>
+</html>

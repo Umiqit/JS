@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+</head>
+<body>
+    <h1>Задание 5 — просмотр элементов массива с порядковым номером</h1>
+
+    <script>
+        // Функция, просматривающая элементы массива
+        // и выводящая их значения с порядковым номером
+        function showArray(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                document.write((i + 1) + ") " + arr[i] + "<br>");
+            }
+        }
+
+        let colors = ["красный", "синий", "зелёный", "жёлтый"];
+        showArray(colors);
+    </script>
+</body>
+</html>

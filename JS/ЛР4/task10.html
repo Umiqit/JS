@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 10</title>
+</head>
+<body>
+    <h1>Задание 10 — методы concat, sort, reverse</h1>
+
+    <script>
+        // Два одномерных массива с именами сотрудников
+        var emp = ["Сидоров", "Петров", "Иванов"];
+        var emp1 = ["Кузнецов", "Смирнов"];
+
+        document.write("Массив emp: " + emp.join(", ") + "<br>");
+        document.write("Массив emp1: " + emp1.join(", ") + "<br><br>");
+
+        // concat() — включить элементы emp1 в массив emp
+        var result = emp.concat(emp1);
+        document.write("<b>После concat():</b> " + result.join(", ") + "<br><br>");
+
+        // Сортировка в порядке возрастания и сохранение в массив empA
+        var empA = result.slice().sort();
+        document.write("<b>Отсортирован (empA):</b> " + empA.join(", ") + "<br><br>");
+
+        // reverse() — обратный порядок элементов массива empA,
+        // присвоение элементов массиву empA1
+        var empA1 = empA.slice().reverse();
+        document.write("<b>После reverse() (empA1):</b> " + empA1.join(", ") + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2.1 — обработчик атрибутом HTML</title>
+</head>
+<body>
+    <h1>Задание 2.1 — обработчик события через атрибут HTML</h1>
+
+    Введите данные:
+    <input type="text" id="inputField" value="введите данные">
+    <!-- Обработчик назначен атрибутом HTML, событие Click -->
+    <input type="button" value="Передать" onclick="confirmInput()">
+
+    <p>Подтверждённые данные:</p>
+    <input type="text" id="outputField">
+
+    <script>
+        // При нажатии на кнопку запрашивается подтверждение введённых данных
+        function confirmInput() {
+            var data = document.getElementById("inputField").value;
+            // Если пользователь подтверждает данные — они считываются в другое поле
+            if (confirm("Подтвердите введённые данные: " + data)) {
+                document.getElementById("outputField").value = data;
+            } else {
+                // В противном случае осуществляется повторный ввод
+                alert("Повторите ввод.");
+                document.getElementById("inputField").focus();
+            }
+        }
+    </script>
+</body>
+</html>

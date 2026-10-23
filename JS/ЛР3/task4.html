@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+    <h1>Задание 4 — проверка почтового индекса (5 цифр)</h1>
+
+    <script>
+        // Шаблон: в строке поиска может содержаться только 5 цифр
+        var indexFormat = /^\d{5}$/;
+
+        var value = prompt("Введите почтовый индекс (5 цифр):", "");
+
+        // Метод exec() возвращает массив совпадений или null
+        var result = indexFormat.exec(value);
+
+        if (value != null && result != null) {
+            alert("Правильный почтовый индекс");
+            document.write("Правильный почтовый индекс<br>");
+            document.write("Шаблон: " + indexFormat + "<br>");
+            document.write("Результат exec(): " + result);
+        } else {
+            alert("Неверный почтовый индекс");
+            document.write("Неверный почтовый индекс");
+        }
+    </script>
+</body>
+</html>

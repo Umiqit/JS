@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 7</title>
+</head>
+<body>
+    <h1>Задание 7 — упорядочивание массива по возрастанию</h1>
+
+    <script>
+        // Заполнение массива X из 12 элементов случайными числами
+        let X = [];
+        for (let i = 0; i < 12; i++) {
+            X[i] = Math.floor(Math.random() * 100);
+        }
+        document.write("Исходный массив X: " + X.join(", ") + "<br><br>");
+
+        // Вариант 1 — сортировка циклом (метод пузырька)
+        let byLoop = X.slice();
+        for (let i = 0; i < byLoop.length - 1; i++) {
+            for (let j = 0; j < byLoop.length - 1 - i; j++) {
+                if (byLoop[j] > byLoop[j + 1]) {
+                    let temp = byLoop[j];
+                    byLoop[j] = byLoop[j + 1];
+                    byLoop[j + 1] = temp;
+                }
+            }
+        }
+        document.write("<b>Отсортирован циклом (пузырёк):</b> " + byLoop.join(", ") + "<br><br>");
+
+        // Вариант 2 — методы массива
+        let byMethods = X.slice().sort(function (a, b) { return a - b; });
+        document.write("<b>Отсортирован методами (sort):</b> " + byMethods.join(", ") + "<br>");
+    </script>
+</body>
+</html>

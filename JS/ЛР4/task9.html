@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 9</title>
+</head>
+<body>
+    <h1>Задание 9 — математические вычисления (do-while + switch-case)</h1>
+
+    <script>
+        do {
+            var a = prompt("Введите первое число", "");
+            var b = prompt("Введите второе число", "");
+
+            // Если данные не введены — повторяем ввод
+            if (a === null || b === null || a.trim() === "" || b.trim() === "" || isNaN(a) || isNaN(b)) {
+                alert("Недопустимый выбор. Повторите ввод");
+                continue;
+            }
+
+            var choice = prompt("Введите число по своему выбору\n" +
+                                "(1) Сложение (2) Вычитание (3) умножение (4) деление", "");
+
+            a = Number(a);
+            b = Number(b);
+
+            switch (choice) {
+                case "1":
+                    alert("результат= " + (a + b));
+                    break;
+                case "2":
+                    alert("результат= " + (a - b));
+                    break;
+                case "3":
+                    alert("результат= " + (a * b));
+                    break;
+                case "4":
+                    if (b === 0) {
+                        alert("Недопустимый выбор. Повторите ввод");
+                    } else {
+                        alert("результат= " + (a / b));
+                    }
+                    break;
+                default:
+                    alert("Недопустимый выбор. Повторите ввод");
+            }
+        } while (confirm("Выполнить ещё одно вычисление?"));
+    </script>
+</body>
+</html>

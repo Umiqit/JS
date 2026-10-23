@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+</head>
+<body>
+    <h1>Задание 5 — тернарная операция (избирательное право)</h1>
+
+    <script>
+        let age = parseInt(prompt("Введите ваш возраст:", ""));
+
+        // Тернарная операция: условие ? значение_если_истина : значение_если_ложь
+        let message = (age >= 18)
+            ? "Вы обладаете избирательным правом"
+            : "Вы не имеете избирательного права";
+
+        alert(message);
+        document.write("Возраст: " + age + "<br>");
+        document.write("<b>" + message + "</b>");
+    </script>
+</body>
+</html>

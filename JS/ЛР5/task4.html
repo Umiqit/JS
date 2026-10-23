@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+    <h1>Задание 4 — функция добавления элемента в массив</h1>
+
+    <script>
+        // Функция, позволяющая добавить элемент в массив
+        function addElement(arr, element) {
+            arr.push(element);
+            return arr;
+        }
+
+        let list = ["яблоко", "груша", "банан"];
+
+        // Список массива ДО добавления элемента
+        document.write("<b>Список массива до добавления:</b><br>");
+        for (let i = 0; i < list.length; i++) {
+            document.write((i + 1) + ") " + list[i] + "<br>");
+        }
+
+        let newElement = prompt("Введите новый элемент массива:", "");
+        addElement(list, newElement);
+
+        // Список массива ПОСЛЕ добавления элемента
+        document.write("<b>Список массива после добавления:</b><br>");
+        for (let i = 0; i < list.length; i++) {
+            document.write((i + 1) + ") " + list[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

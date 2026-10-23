@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2.2 — обработчик свойством DOM-объекта</title>
+</head>
+<body>
+    <h1>Задание 2.2 — обработчик события через свойство DOM-объекта</h1>
+
+    Введите данные:
+    <input type="text" id="inputField" value="введите данные">
+    <input type="button" id="btn" value="Передать">
+
+    <p>Подтверждённые данные:</p>
+    <input type="text" id="outputField">
+
+    <script>
+        // Обработчик назначается свойством DOM-объекта onclick
+        document.getElementById("btn").onclick = function confirmInput() {
+            var data = document.getElementById("inputField").value;
+            if (confirm("Подтвердите введённые данные: " + data)) {
+                document.getElementById("outputField").value = data;
+            } else {
+                alert("Повторите ввод.");
+                document.getElementById("inputField").focus();
+            }
+        };
+    </script>
+</body>
+</html>

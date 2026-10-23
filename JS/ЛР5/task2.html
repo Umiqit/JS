@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+</head>
+<body>
+    <h1>Задание 2 — функция сложения чисел</h1>
+
+    <script>
+        // Функция сложения чисел
+        function sum(a, b) {
+            return a + b;
+        }
+
+        // Ввод через prompt()
+        let x = parseFloat(prompt("Введите первое число:", ""));
+        let y = parseFloat(prompt("Введите второе число:", ""));
+
+        // Вывод результата в окно браузера
+        document.write(x + " + " + y + " = <b>" + sum(x, y) + "</b>");
+    </script>
+</body>
+</html>

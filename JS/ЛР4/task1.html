@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+<body>
+    <h1>Задание 1 — средний балл успеваемости</h1>
+
+    <script>
+        let marks = [];
+        let input;
+
+        // Ввод 5 оценок. Ввод заканчивается, если введена пустая строка,
+        // не число или нажата «Отмена». Ноль 0 — разрешённое число,
+        // поэтому проверяем именно пустоту строки, а не falsy-значение.
+        for (let i = 0; i < 5; i++) {
+            input = prompt("Введите оценку №" + (i + 1) + ":", "");
+            if (input === null || input.trim() === "" || isNaN(input)) {
+                alert("Ввод оценок завершён.");
+                break;
+            }
+            marks.push(Number(input));
+        }
+
+        if (marks.length > 0) {
+            let sum = 0;
+            for (let i = 0; i < marks.length; i++) sum += marks[i];
+            let average = sum / marks.length;
+
+            document.write("Введённые оценки: " + marks.join(", ") + "<br>");
+            document.write("<b>Средний балл: " + average.toFixed(2) + "</b>");
+        } else {
+            document.write("Оценки не введены.");
+        }
+    </script>
+</body>
+</html>

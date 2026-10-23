@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+</head>
+<body>
+    <h1>Задание 6 — функция возврата элементов массива</h1>
+
+    <script>
+        // Функция возвращает элементы массива через return
+        function getElements(arr) {
+            return arr;
+        }
+
+        let numbers = [10, 20, 30, 40, 50];
+
+        // Получаем элементы массива из функции и выводим их
+        let result = getElements(numbers);
+        document.write("Элементы массива, возвращённые функцией:<br>");
+        for (let i = 0; i < result.length; i++) {
+            document.write((i + 1) + ") " + result[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+    <h1>Задание 4 — минимальный элемент матрицы 3×4</h1>
+
+    <script>
+        // Матрица X: 3 строки и 4 столбца
+        let X = [];
+        for (let i = 0; i < 3; i++) {
+            X[i] = [];
+            for (let j = 0; j < 4; j++) {
+                X[i][j] = parseFloat(prompt("Введите элемент X[" + i + "][" + j + "]:", ""));
+            }
+        }
+
+        // Вывод введённых значений с порядковым номером
+        document.write("Введённые элементы матрицы:<br>");
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 4; j++) {
+                document.write((i * 4 + j + 1) + ") X[" + i + "][" + j + "] = " + X[i][j] + "<br>");
+            }
+        }
+
+        // Поиск минимального элемента и его индексов
+        let min = X[0][0], minI = 0, minJ = 0;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 4; j++) {
+                if (X[i][j] < min) {
+                    min = X[i][j];
+                    minI = i;
+                    minJ = j;
+                }
+            }
+        }
+
+        alert("Минимальное значение массива: " + min +
+              " (индексы: строка " + minI + ", столбец " + minJ + ")");
+        document.write("<b>Минимальное значение: " + min +
+              ", индексы X[" + minI + "][" + minJ + "]</b>");
+    </script>
+</body>
+</html>

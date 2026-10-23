@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3.1 — банковский вклад</title>
+</head>
+<body>
+    <h1>Задание 3.1 — расчёт банковского вклада</h1>
+
+    <form>
+        Сумма вклада: <input type="number" id="sum" value="1000"><br>
+        Процент годовых: <input type="number" id="percent" value="10"><br>
+        Срок (лет): <input type="number" id="years" value="1"><br>
+        <input type="button" id="calc" value="Рассчитать">
+    </form>
+
+    <h2>Сумма через заданный промежуток времени: <span id="result">—</span></h2>
+
+    <script>
+        // События change/input: пересчёт происходит при изменении любого поля
+        function calculate() {
+            var sum = parseFloat(document.getElementById("sum").value);
+            var percent = parseFloat(document.getElementById("percent").value);
+            var years = parseFloat(document.getElementById("years").value);
+
+            // Простые проценты: S = P * (1 + r * t)
+            var total = sum * (1 + percent / 100 * years);
+            document.getElementById("result").textContent = total.toFixed(2);
+        }
+
+        document.getElementById("sum").addEventListener("input", calculate);
+        document.getElementById("percent").addEventListener("input", calculate);
+        document.getElementById("years").addEventListener("input", calculate);
+        document.getElementById("calc").addEventListener("click", calculate);
+    </script>
+</body>
+</html>

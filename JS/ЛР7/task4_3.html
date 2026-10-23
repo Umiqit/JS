@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задания листа №4 — задание 3 («Калькулятор»)</title>
+</head>
+<body>
+    <h1>Задание 3 — код «Калькулятор»</h1>
+
+    <form name="calc">
+        переменная 1
+        <input type="text" name="var1" size="5">
+        действие
+        <!-- Список (select): значения передаются с value -->
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        переменная 2
+        <input type="text" name="var2" size="5">
+        равно
+        <input type="text" name="result" size="8">
+        <input type="button" value="кликни меня" onclick="calculate()">
+    </form>
+
+    <script>
+        function calculate() {
+            var a = parseFloat(document.calc.var1.value);
+            var b = parseFloat(document.calc.var2.value);
+            var op = document.calc.operation.value;
+            var res;
+
+            // Для написания кода «Калькулятор» используется цикл switch
+            switch (op) {
+                case "+":
+                    res = a + b;
+                    break;
+                case "-":
+                    res = a - b;
+                    break;
+                case "*":
+                    res = a * b;
+                    break;
+                case "/":
+                    if (b === 0) {
+                        alert("На ноль делить нельзя!");
+                        return;
+                    }
+                    res = a / b;
+                    break;
+                default:
+                    alert("Неизвестная операция");
+                    return;
+            }
+
+            document.calc.result.value = res;
+        }
+    </script>
+</body>
+</html>

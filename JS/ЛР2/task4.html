@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+    <h1>Задание 4 — сравнение имени и возраста</h1>
+
+    <script>
+        // Заданные в коде эталонные значения
+        const myName = "Иван";
+        const myAge = 20;
+
+        // Введённые пользователем значения
+        let name = prompt("Введите имя:", "");
+        let age = parseInt(prompt("Введите возраст:", ""));
+
+        document.write("Эталонные значения: имя = " + myName + ", возраст = " + myAge + "<br>");
+        document.write("Введённые значения: имя = " + name + ", возраст = " + age + "<br><br>");
+
+        // Логические операторы и сравнения
+        document.write("Имена совпадают (==): " + (name == myName) + "<br>");
+        document.write("Имена совпадают (===): " + (name === myName) + "<br>");
+        document.write("Возраст совпадает: " + (age == myAge) + "<br>");
+        document.write("Возраст введённого больше эталонного: " + (age > myAge) + "<br>");
+        document.write("Оба условия одновременно (&&): " + (name == myName && age == myAge) + "<br>");
+        document.write("Хотя бы одно условие (||): " + (name == myName || age == myAge) + "<br>");
+        document.write("Отрицание совпадения имён (!=): " + (name != myName));
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+</head>
+<body>
+    <h1>Задание 5 — вывод чётных чисел массива</h1>
+
+    <script>
+        let n = parseInt(prompt("Введите количество элементов массива:", "5"));
+        let arr = [];
+
+        // Ввод элементов массива
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Введите элемент [" + i + "]:", ""));
+        }
+
+        document.write("Весь массив: " + arr.join(", ") + "<br>");
+        document.write("Чётные числа массива: ");
+
+        // Вывод только чётных чисел
+        let first = true;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                if (!first) document.write(", ");
+                document.write(arr[i]);
+                first = false;
+            }
+        }
+    </script>
+</body>
+</html>

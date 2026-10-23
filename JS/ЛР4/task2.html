@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+</head>
+<body>
+    <h1>Задание 2 — максимальный элемент массива (12 элементов)</h1>
+
+    <script>
+        let X = [];
+
+        // Ввод элементов массива через prompt()
+        for (let i = 0; i < 12; i++) {
+            X[i] = parseFloat(prompt("Введите элемент массива X[" + i + "]:", ""));
+        }
+
+        // Вывод введённых значений с порядковым номером
+        document.write("Введённые элементы массива:<br>");
+        for (let i = 0; i < X.length; i++) {
+            document.write((i + 1) + ") " + X[i] + "<br>");
+        }
+
+        // Поиск максимального элемента
+        let max = X[0];
+        for (let i = 1; i < X.length; i++) {
+            if (X[i] > max) max = X[i];
+        }
+
+        alert("Максимальное значение массива: " + max);
+        document.write("<b>Максимальное значение массива: " + max + "</b>");
+    </script>
+</body>
+</html>

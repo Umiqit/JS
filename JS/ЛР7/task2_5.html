@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2.5 — один объект, два события</title>
+</head>
+<body>
+    <h1>Задание 2.5 — один и тот же объект обрабатывает оба события</h1>
+
+    <!-- Одна и та же кнопка обрабатывает и onclick, и onmouseover -->
+    <input type="button" id="multiButton" value="Наведите и щёлкните">
+
+    <p id="log"></p>
+
+    <script>
+        var btn = document.getElementById("multiButton");
+        var log = document.getElementById("log");
+
+        // Один и тот же объект (кнопка) обрабатывает оба события
+        btn.onclick = function () {
+            log.innerHTML += "Произошло событие: <b>click</b><br>";
+        };
+
+        btn.onmouseover = function () {
+            log.innerHTML += "Произошло событие: <b>mouseover</b><br>";
+        };
+    </script>
+</body>
+</html>

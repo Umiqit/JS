@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4. Объект Date</title>
+</head>
+<body>
+    <h1>Задание 4.1–4.4 — объект Date</h1>
+
+    <script>
+        // 4.1 Функция, возвращающая сегодняшнюю дату, месяц, год и время
+        function showToday() {
+            var now = new Date();
+            var date = now.getDate();
+            var month = now.getMonth() + 1; // месяцы от 0 до 11
+            var year = now.getFullYear();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            document.write("дата сегодня " + date + "." + month + "." + year + "<br>");
+            document.write("время сейчас " + hours + ":" + minutes + ":" + seconds + "<br><br>");
+        }
+        showToday();
+
+        // 4.2 Преобразовать дату (12,11,23,14,10,7) в строку
+        // с использованием интернациональных установок системы и гринвичского времени
+        var date = new Date(2012, 11, 23, 14, 10, 7);
+        document.write("Интернациональная установка системы: " + date.toLocaleString() + "<br>");
+        document.write("Гринвичское время (UTC): " + date.toUTCString() + "<br><br>");
+
+        // 4.3 Сегодняшняя дата, другая дата, разность в днях, округлённая до целого
+        function dateDifference() {
+            var today = new Date();
+            var other = new Date(2026, 11, 31, 12, 0, 0); // любая другая дата
+
+            var diffMs = other - today;                    // разность в миллисекундах
+            var diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24)); // округление до ближайшего целого
+
+            document.write("Сегодня: " + today.toLocaleDateString() + "<br>");
+            document.write("Другая дата: " + other.toLocaleDateString() + "<br>");
+            document.write("Разность между датами: " + diffDays + " дн.<br>");
+            document.write("Разность в строку: " + diffDays.toString() + "<br><br>");
+        }
+        dateDifference();
+
+        // 4.4 Количество дней, оставшихся до дня рождения
+        function daysToBirthday() {
+            var today = new Date();
+            var birthday = new Date(today.getFullYear(), 10, 4); // 4 ноября — день рождения
+
+            // Если в этом году день рождения уже прошёл — берём следующий год
+            if (birthday < today) {
+                birthday = new Date(today.getFullYear() + 1, 10, 4);
+            }
+
+            var diffMs = birthday - today;
+            var daysLeft = Math.round(diffMs / (1000 * 60 * 60 * 24));
+
+            document.write("Осталось дней " + daysLeft + "<br>");
+            document.write("userdate " + birthday.toString());
+        }
+        daysToBirthday();
+    </script>
+</body>
+</html>
