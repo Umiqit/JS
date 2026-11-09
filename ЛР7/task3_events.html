@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задания 3.2–3.7 — события focus, mouse, submit, load</title>
+</head>
+<body>
+    <h1>Задания 3.2–3.7 — основные события</h1>
+
+    <h2>3.2 focus / blur (фокус и потеря фокуса)</h2>
+    <input type="text" id="focusField" placeholder="щёлкните сюда">
+    <span id="focusMsg"></span>
+
+    <h2>3.3 / 3.5 События мыши (mouseover / mouseout)</h2>
+    <div id="mouseBox" style="width:200px; height:80px; border:1px solid black;">
+        Наведите курсор на этот блок
+    </div>
+    <div id="mouseMsg"></div>
+
+    <h2>3.7 Отправка формы (submit)</h2>
+    <form id="myForm">
+        Имя: <input type="text" name="username">
+        <input type="submit" value="Отправить">
+    </form>
+    <div id="formMsg"></div>
+
+    <script>
+        // 3.2 focus / blur
+        var focusField = document.getElementById("focusField");
+        focusField.onfocus = function () {
+            document.getElementById("focusMsg").textContent = "поле получило фокус";
+        };
+        focusField.onblur = function () {
+            document.getElementById("focusMsg").textContent = "поле потеряло фокус";
+        };
+
+        // 3.3 / 3.5 mouseover / mouseout
+        var box = document.getElementById("mouseBox");
+        box.onmouseover = function () {
+            this.style.backgroundColor = "yellow";
+            document.getElementById("mouseMsg").textContent = "курсор вошёл в блок";
+        };
+        box.onmouseout = function () {
+            this.style.backgroundColor = "";
+            document.getElementById("mouseMsg").textContent = "курсор вышел из блока";
+        };
+
+        // 3.7 submit — можно отменить отправку через preventDefault()
+        document.getElementById("myForm").onsubmit = function (event) {
+            var name = this.username.value;
+            if (name === "") {
+                event.preventDefault(); // отмена отправки формы
+                document.getElementById("formMsg").textContent = "Введите имя перед отправкой!";
+            } else {
+                document.getElementById("formMsg").textContent = "Форма отправлена, " + name;
+            }
+        };
+    </script>
+</body>
+</html>

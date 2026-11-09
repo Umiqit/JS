@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2.4 — свойства объекта event</title>
+</head>
+<body>
+    <h1>Задание 2.4 — основные свойства объекта event</h1>
+
+    <input type="button" id="btn" value="Щёлкните с клавишей Shift/Ctrl/Alt">
+    <input type="text" id="field" placeholder="нажмите клавишу">
+
+    <p id="info"></p>
+
+    <script>
+        // Пример 1: тип события и координаты мыши
+        document.getElementById("btn").onclick = function (event) {
+            document.getElementById("info").innerHTML =
+                "Тип события: " + event.type + "<br>" +
+                "Координаты мыши: x = " + event.clientX + ", y = " + event.clientY + "<br>" +
+                "Целевой элемент: " + event.target.value + "<br>" +
+                "Нажата Shift: " + event.shiftKey + "<br>" +
+                "Нажата Ctrl: " + event.ctrlKey + "<br>" +
+                "Нажата Alt: " + event.altKey;
+        };
+
+        // Пример 2: код нажатой клавиши (keyboard event)
+        document.getElementById("field").onkeydown = function (event) {
+            document.getElementById("info").innerHTML =
+                "Тип события: " + event.type + "<br>" +
+                "Код клавиши (keyCode): " + event.keyCode + "<br>" +
+                "Клавиша: " + event.key;
+        };
+    </script>
+</body>
+</html>

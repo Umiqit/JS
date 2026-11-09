@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1 — динамический массив</title>
+</head>
+<body>
+    <h1>Задание 1. Пример 1 — динамический массив</h1>
+
+    <form name="form1">
+        <select name="selectDay">
+            <script language="JavaScript" type="text/JavaScript">
+                // Список формируется из массива: каждому элементу массива
+                // соответствует элемент списка <option>
+                var mass = new Array("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль",
+                                     "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь");
+                for (i = 0; i <= 11; i++) {
+                    document.write("<option value=\"" + i + "\">" + mass[i] + "</option>");
+                }
+            </script>
+        </select>
+    </form>
+</body>
+</html>

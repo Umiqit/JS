@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+<body>
+    <h1>Задание 1 — расчёт процента по займу</h1>
+
+    <script>
+        // Ввод суммы займа и процента
+        let sum = parseFloat(prompt("Введите сумму займа:", "1000"));
+        let percent = parseFloat(prompt("Введите процент по займу:", "10"));
+
+        // Расчёт итоговой суммы ссуды, подлежащей уплате
+        let total = sum + sum * percent / 100;
+
+        alert("Итоговая сумма ссуды, подлежащая уплате: " + total);
+        document.write("Сумма займа: " + sum + "<br>");
+        document.write("Процент: " + percent + "%<br>");
+        document.write("<b>Итоговая сумма к уплате: " + total + "</b>");
+    </script>
+</body>
+</html>

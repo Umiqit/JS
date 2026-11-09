@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 16</title>
+</head>
+<body>
+    <h1>Пример простой</h1>
+
+    <script language="JavaScript" type="text/JavaScript">
+        // Функция вывода горизонтальной линии
+        function line() {
+            document.writeln("<hr align='center' width='100'>");
+        }
+
+        for (var i = 1; i < 10; i++) line();
+    </script>
+
+    <h2>Вариант: десять линий, первая — 10 пикселей, каждая следующая на 10 больше</h2>
+
+    <script>
+        function lineWidth(width) {
+            document.writeln("<hr align='center' width='" + width + "'>");
+        }
+
+        // Первая линия 10 пикселей, каждая следующая на 10 больше
+        for (var w = 10; w <= 100; w += 10) lineWidth(w);
+    </script>
+</body>
+</html>

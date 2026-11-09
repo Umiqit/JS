@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3</title>
+</head>
+<body>
+    <h1>Задание 3 — сведения о студентах (многомерный массив)</h1>
+
+    <script>
+        // Многомерный массив: имя, год рождения, место жительства
+        var students = [
+            ["Вася", 2003, "Воронеж"],
+            ["Маша", 2005, "Москва"],
+            ["Лена", 2005, "Москва"]
+        ];
+
+        document.write("<h2>Вывод данных БЕЗ цикла (рис. 1)</h2>");
+        document.write("<b>данные о студентах</b><br>");
+        document.write("имя " + students[0][0] + "<br>");
+        document.write("местоположение " + students[0][2] + "<br>");
+        document.write("имя " + students[1][0] + "<br>");
+        document.write("местоположение " + students[1][2] + "<br>");
+
+        document.write("<h2>Вывод данных с циклом — таблица (рис. 2)</h2>");
+        document.write("<table border='1' cellpadding='5'>");
+        document.write("<tr><th>имя</th><th>возраст</th><th>месторождения</th></tr>");
+        for (var i = 0; i < students.length; i++) {
+            document.write("<tr>");
+            for (var j = 0; j < students[i].length; j++) {
+                document.write("<td>" + students[i][j] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>

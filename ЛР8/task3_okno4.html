@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Окно 4</title>
+    <script type="text/javascript" src="task3_okno4.js"></script>
+</head>
+<body>
+    <h1>Новый текст в четвёртом окне (окно4)</h1>
+
+    Текст четвёртого окна окна<br>
+
+    <!-- Закрыть главное (родительское) окно -->
+    <a href="#" onclick="window.opener.close(); return false;">Закрыть главное (родительское) окно</a><br>
+
+    <!-- Закрыть текущее (вспомогательное) окно -->
+    <a href="#" onclick="close_current(); return false;">Закрыть текущее (вспомогательное) окно</a>
+</body>
+</html>

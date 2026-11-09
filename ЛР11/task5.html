@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5 — выбор цвета фона</title>
+    <script type="text/javascript" src="task5.js"></script>
+</head>
+<body id="pageBody">
+    <form name="orderForm">
+        <table>
+            <tr>
+                <td>Ваше имя</td>
+                <td>Форма открытия<br><input type="radio" name="f" checked> в открыт<br><input type="radio" name="f"> в закрытом</td>
+            </tr>
+            <tr><td>Адрес</td><td></td></tr>
+            <tr><td>Компания</td><td>Дополнительная информация</td></tr>
+            <tr>
+                <td>
+                    выберите цвет фона:
+                    <select name="bgColor">
+                        <option value="white">белый</option>
+                        <option value="orange">оранжевый</option>
+                        <option value="yellow">жёлтый</option>
+                        <option value="green">зелёный</option>
+                        <option value="lightblue">голубой</option>
+                    </select><br>
+                    <input type="checkbox" name="forget"> Забыли ввести цвет фона
+                </td>
+                <td><textarea rows="4" cols="20"></textarea></td>
+            </tr>
+        </table>
+        <input type="button" value="Отправить" onclick="applyColor()">
+        <input type="reset" value="Очистить">
+    </form>
+</body>
+</html>

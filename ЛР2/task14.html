@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 14</title>
+</head>
+<body>
+    <h1>Задание 14 — ввод имени до тех пор, пока оно не будет введено</h1>
+
+    <script>
+        let name;
+
+        // Окно ввода не закроется, пока не будет введено имя
+        do {
+            name = prompt("Введите ваше имя:", "");
+        } while (name === null || name.trim() === "");
+
+        // Вывод имени в окне браузера жирным шрифтом
+        document.write("Ваше имя: <b>" + name + "</b>");
+    </script>
+</body>
+</html>

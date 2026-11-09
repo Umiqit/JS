@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 7</title>
+</head>
+<body>
+    <h1>Задание 7 — ввод положительных и отрицательных элементов</h1>
+
+    <script>
+        // Функция ввода отрицательных и положительных элементов
+        function inputElements(n) {
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseFloat(prompt("Введите элемент [" + i + "] (может быть отрицательным):", ""));
+            }
+            return arr;
+        }
+
+        let n = parseInt(prompt("Сколько элементов ввести?", "5"));
+        let arr = inputElements(n);
+
+        // Сначала выводим положительные элементы с указанием индекса
+        document.write("<b>Положительные элементы:</b><br>");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                document.write("индекс " + i + " : " + arr[i] + "<br>");
+            }
+        }
+
+        // Затем отрицательные элементы с указанием индекса
+        document.write("<b>Отрицательные элементы:</b><br>");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                document.write("индекс " + i + " : " + arr[i] + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

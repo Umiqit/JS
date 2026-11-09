@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2. Объект String</title>
+</head>
+<body>
+    <h1>Задание 2.1–2.5 — объект String</h1>
+
+    <script>
+        // 2.1 Функция ucFirst(str), возвращающая строку str с заглавным
+        // первым символом, с проверкой на пустую строку
+        function ucFirst(str) {
+            if (str === null || str === "") {
+                return str; // проверка на пустую строку
+            }
+            return str[0].toUpperCase() + str.slice(1);
+        }
+
+        document.write("2.1 ucFirst(\"вася\") = " + ucFirst("вася") + "<br>");
+        document.write("2.1 ucFirst(\"\") = '" + ucFirst("") + "' (пустая строка)<br><br>");
+
+        // 2.2 Функция, возвращающая число символов в строке, символ в шестой
+        // позиции, слова в отдельные подстроки, два первых слова и верхний регистр
+        function ucFirst2(str) {
+            document.write("Число символов в строке: " + str.length + "<br>");
+            document.write("Символ в шестой позиции: " + str.charAt(5) + "<br>");
+
+            // Выделить пробелами слова в отдельные подстроки
+            var words = str.split(" ");
+            document.write("Слова строки:<br>");
+            for (var i = 0; i < words.length; i++) {
+                document.write("слово " + (i + 1) + ": " + words[i] + "<br>");
+            }
+
+            // Возврат двух первых слов в виде подстрок
+            var firstTwo = words[0] + " " + (words[1] !== undefined ? words[1] : "");
+            document.write("Два первых слова: " + firstTwo + "<br>");
+
+            // Поменять регистр строки на верхний и отобразить
+            document.write("Строка в верхнем регистре: " + str.toUpperCase() + "<br>");
+            return firstTwo;
+        }
+
+        ucFirst2("Привет мир JavaScript");
+        document.write("<br>");
+
+        // 2.3 Ввод предложения через prompt(), печать слов через Enter (substring)
+        var sentence = prompt("2.3 Введите предложение:", "");
+        var start = 0;
+        for (var i = 0; i <= sentence.length; i++) {
+            if (sentence[i] === " " || i === sentence.length) {
+                document.write(sentence.substring(start, i) + "<br>"); // слово через Enter
+                start = i + 1;
+            }
+        }
+        document.write("<br>");
+
+        // 2.4 Обрезание длинного текста
+        var str = "Дана переменная str, в которой хранится какой-либо длинный текст";
+        var n = 20;
+        var result;
+
+        if (str.length > n) {
+            result = str.slice(0, n) + "..."; // первые n символов и троеточие
+        } else {
+            result = str;
+        }
+        document.write("2.4 Обрезанный текст: " + result + "<br><br>");
+
+        // 2.5 Замена всех дефисов на '!' с помощью глобального поиска и замены
+        var dashed = prompt("2.5 Введите строку с дефисами:", "как-хорошо-быть-программистом");
+        var replaced = dashed.replace(/-/g, "!");
+        document.write("2.5 Результат замены: " + replaced);
+    </script>
+</body>
+</html>

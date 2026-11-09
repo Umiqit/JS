@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 9 — объект location</title>
+    <script type="text/javascript" src="task9.js"></script>
+</head>
+<body>
+    <h1>Задание 9 — объект location документа</h1>
+
+    <input type="button" value="Показать части URL" onclick="showUrlParts()">
+    <input type="button" value="Перезагрузить страницу" onclick="reloadPage()">
+    <input type="button" value="Заменить страницу" onclick="replacePage()">
+    <br><br>
+
+    <!-- Позволяющий пользователю вернуться к предыдущей странице
+         при щелчке на ссылке Go Back -->
+    <a href="#" onclick="javascript:history.back(); return false;">Go Back</a>
+
+    <p id="info"></p>
+</body>
+</html>

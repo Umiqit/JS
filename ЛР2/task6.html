@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+</head>
+<body>
+    <h1>Задание 6 — деление чисел с проверкой делителя</h1>
+
+    <script>
+        let dividend = parseFloat(prompt("Введите делимое:", ""));   // делимое
+        let divisor = parseFloat(prompt("Введите делитель:", ""));   // делитель
+
+        // Проверка делителя перед делением
+        if (divisor === 0) {
+            alert("Ошибка: на ноль делить нельзя!");
+            document.write("<b>Ошибка: делитель равен нулю.</b>");
+        } else {
+            let result = dividend / divisor;
+            alert("Результат деления: " + result);
+            document.write(dividend + " / " + divisor + " = <b>" + result + "</b>");
+        }
+    </script>
+</body>
+</html>

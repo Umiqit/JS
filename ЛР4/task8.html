@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 8</title>
+</head>
+<body>
+    <h1>Задание 8 — массив цветов, цикл for...in</h1>
+
+    <script>
+        // Ввод цветов через клавиатуру
+        let colors = [];
+        let count = parseInt(prompt("Сколько цветов ввести?", "3"));
+
+        for (let i = 0; i < count; i++) {
+            colors[i] = prompt("Введите цвет №" + (i + 1) + ":", "");
+        }
+
+        // Просмотр элементов массива циклом for...in и вывод в документ
+        document.write("Цвета в массиве:<br>");
+        for (let index in colors) {
+            document.write("Элемент [" + index + "]: " + colors[index] + "<br>");
+        }
+    </script>
+</body>
+</html>

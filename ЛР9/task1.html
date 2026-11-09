@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+    <script language="JavaScript" type="text/JavaScript" src="task1.js"></script>
+</head>
+<body>
+    <h1>Пример простой</h1>
+
+    <!-- Вариант прорисованных линий: первая длиной 10 пикселей,
+         каждая последующая на 10 пикселей больше -->
+    <script language="JavaScript" type="text/JavaScript">
+        function line(width) {
+            document.writeln("<hr align='center' width='" + width + "'>");
+        }
+
+        for (var w = 10; w <= 100; w += 10) line(w);
+    </script>
+
+    <!-- По нажатию кнопки «Тест» выводятся линии по центру,
+         с начальным размером от 5 до 100 с шагом 5 -->
+    <input type="button" value="тест" onclick="drawLines()">
+</body>
+</html>

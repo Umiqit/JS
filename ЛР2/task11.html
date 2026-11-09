@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 11</title>
+</head>
+<body>
+    <h1>Задание 11 — вложенная конструкция switch-case</h1>
+
+    <script>
+        let a = parseFloat(prompt("Введите первое значение", ""));
+        let b = parseFloat(prompt("Введите второе значение", ""));
+
+        // Выбор операции: 1 — умножение, 2 — деление
+        let operation = parseInt(prompt("Выбор вида операции:\n1 — умножение\n2 — деление", ""));
+
+        switch (operation) {
+            case 1:
+                alert("Результат умножения: " + (a * b));
+                break;
+            case 2:
+                if (b === 0) {
+                    alert("На ноль делить нельзя!");
+                    break;
+                }
+                // Вложенный выбор: 1 — остаток, 2 — частное
+                let kind = parseInt(prompt("Введите остаток или частное от деления:\n1 — остаток\n2 — частное", ""));
+                switch (kind) {
+                    case 1:
+                        alert("Остаток от деления: " + (a % b));
+                        break;
+                    case 2:
+                        alert("Частное от деления: " + (a / b));
+                        break;
+                    default:
+                        alert("Неверный выбор вида деления");
+                }
+                break;
+            default:
+                alert("Неверный выбор операции");
+        }
+    </script>
+</body>
+</html>

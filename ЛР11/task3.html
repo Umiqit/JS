@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3 — Page elements</title>
+    <script type="text/javascript" src="task3.js"></script>
+</head>
+<body>
+    <h1>Задание 3 — создание страницы по состоянию переключателей</h1>
+
+    <form name="pageForm">
+        <b>Page elements:</b><br>
+        <input type="checkbox" name="title"> Show title<br>
+        <input type="checkbox" name="horlines"> Show horizontal lines<br>
+        <input type="checkbox" name="tableview"> Table view<br>
+
+        <b>Text color:</b><br>
+        <input type="radio" name="color" value="Red"> Red<br>
+        <input type="radio" name="color" value="Green"> Green<br>
+        <input type="radio" name="color" value="Blue" checked> Blue<br>
+
+        <input type="button" value="Create Page" onclick="createPage()">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

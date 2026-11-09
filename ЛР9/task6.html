@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+    <script type="text/javascript" src="task6.js"></script>
+</head>
+<body>
+    <h1>Задание 6 — изменение цвета блока текста</h1>
+
+    <!-- Блок 1: при нажатии мыши меняет цвет блока 2 -->
+    <div id="block1" style="border:1px solid black; padding:10px; width:300px;"
+         onmousedown="changeColor()">
+        Щёлкните мышью на этом блоке — изменится цвет другого блока текста.
+    </div>
+
+    <!-- Блок 2: цвет этого текста меняется -->
+    <div id="block2" style="border:1px solid black; padding:10px; width:300px; margin-top:10px;">
+        Этот блок текста изменит свой цвет при нажатии мыши на первый блок.
+    </div>
+</body>
+</html>

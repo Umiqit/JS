@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Open window methods</title>
+    <script type="text/javascript" src="task4.js"></script>
+</head>
+<body>
+    <center>
+        <h1>гиперссылка</h1>
+        <hr>
+    </center>
+
+    <!-- Тип void() означает отсутствие какого-либо значения:
+         действия при выборе гипертекстовой ссылки выполняются,
+         но при этом не перегружаются текущие страницы -->
+    Если выбрать гипертекстовую ссылку
+    <a href="javascript:void(0)" onclick="openNewWindow()">Открыть окно</a>,
+    то будет открыто новое окно.<br>
+    Если выбрать гипертекстовую ссылку
+    <a href="javascript:void(0)" onclick="closeWindow()">Закрыть окно</a>,
+    то данное окно будет закрыто.
+</body>
+</html>

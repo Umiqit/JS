@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задания листа №4 — задание 2 (onClick)</title>
+</head>
+<body>
+    <h1>Задание 2 — событие onClick()</h1>
+
+    <form name="form1">
+        <input type="text" name="resultField"><br>
+        <input type="button" name="button1" value="кликни меня" onclick="showName(this.form)">
+    </form>
+
+    <script>
+        // При нажатии на кнопку её имя передаётся в текстовое поле
+        function showName(form) {
+            form.resultField.value = form.button1.value; // или form.button1.name
+        }
+    </script>
+</body>
+</html>

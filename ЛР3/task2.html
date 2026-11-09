@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+</head>
+<body>
+    <h1>Задание 2 — проверка телефонного номера (XXX)XXX-XXXX</h1>
+
+    <script>
+        // Правильный фрагмент кода — с якорями начала (^) и конца ($) строки:
+        // /^\(\d{3}\)\d{3}-\d{4}$/
+        // \( и \) — экранированные скобки, \d{3} — три цифры, \d{4} — четыре цифры.
+        // Без якорей exec() нашёл бы шаблон даже внутри «мусорной» строки.
+        var phonenumberformat = /^\(\d{3}\)\d{3}-\d{4}$/;
+
+        var phonenumber = prompt("Введите телефонный номер в следующем формате: (XXX)XXX-XXXX:", "");
+
+        if (phonenumberformat.exec(phonenumber) != null) {
+            alert("Правильный телефонный номер");
+            document.write("Введённый номер '<b>" + phonenumber + "</b>' — правильный телефонный номер");
+        } else {
+            alert("Введите телефонный номер в формате (XXX)XXX-XXXX.");
+            document.write("Введённый номер '<b>" + phonenumber + "</b>' — неверный формат");
+        }
+    </script>
+</body>
+</html>

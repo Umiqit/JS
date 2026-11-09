@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1.4 — personalMovieDB</title>
+</head>
+<body>
+    <h1>Задание 1.4 — программа опроса о фильмах</h1>
+    <p>Откройте консоль браузера (F12), чтобы увидеть вывод.</p>
+
+    <script>
+        // ===== Часть 1 =====
+
+        // Ответ пользователя на вопрос «Сколько фильмов вы уже посмотрели?»
+        var numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "");
+
+        // Объект базы данных фильмов
+        var personalMovieDB = {
+            count: numberOfFilms,
+            movies: {},      // пустой объект
+            actors: {},      // пустой объект
+            genres: [],      // пустой массив
+            private: false   // логическое значение false
+        };
+
+        // Два вопроса пользователю
+        var lastMovie = prompt("Один из последних просмотренных фильмов?", "");
+        var movieRate = prompt("На сколько оцените его?", "");
+
+        // Запись ответов в объект movies в формате movies: {'logan': '8.1'}
+        personalMovieDB.movies[lastMovie] = movieRate;
+
+        console.log(personalMovieDB);
+
+        // ===== Часть 2 =====
+
+        // Автоматизация вопросов циклом, с валидацией ответов
+        for (var i = 0; i < 2; i++) {
+            var movie = prompt("Один из последних просмотренных фильмов?", "");
+            var rate = prompt("На сколько оцените его?", "");
+
+            // Нельзя оставить ответ пустым, отменить ввод или ввести название длиннее 50 символов
+            if (movie != null && movie !== "" && movie.length < 50 && rate != null && rate !== "") {
+                personalMovieDB.movies[movie] = rate;
+                console.log("Фильм записан: " + movie);
+            } else {
+                console.log("Некорректный ввод, возвращаем пользователя к вопросам опять");
+                i--; // возвращаем пользователя к вопросам опять
+            }
+        }
+
+        // Проверка свойства count и вывод сообщения
+        if (personalMovieDB.count < 10) {
+            alert("Просмотрено довольно мало фильмов");
+        } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+            alert("Вы классический зритель");
+        } else if (personalMovieDB.count > 30) {
+            alert("Вы киноман");
+        } else {
+            alert("Произошла ошибка");
+        }
+
+        // ===== Часть 3 =====
+
+        // Оптимизация: showMyDB проверяет свойство privat,
+        // если стоит false — выводит в консоль главный объект программы
+        function showMyDB(hidden) {
+            if (!hidden) {
+                console.log(personalMovieDB);
+            }
+        }
+        showMyDB(personalMovieDB.private);
+
+        // writeYourGenres: 3 раза вопрос о любимом жанре, ответы — в массив genres
+        function writeYourGenres() {
+            for (var i = 1; i <= 3; i++) {
+                var genre = prompt("Ваш любимый жанр под номером " + i, "");
+                personalMovieDB.genres[i - 1] = genre;
+            }
+        }
+        writeYourGenres();
+
+        console.log("Итоговая база фильмов:");
+        console.log(personalMovieDB);
+    </script>
+</body>
+</html>

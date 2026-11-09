@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3</title>
+</head>
+<body>
+    <h1>Задание 3 — сложение элементов массива в обратном порядке</h1>
+
+    <script>
+        // Функция сложения элементов массива в обратном порядке
+        function sumReverse(arr) {
+            let sum = 0;
+            for (let i = arr.length - 1; i >= 0; i--) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+        // Вариант 1: ввод элементов массива с клавиатуры
+        let n = parseInt(prompt("Введите количество элементов массива:", "5"));
+        let arr1 = [];
+        for (let i = 0; i < n; i++) {
+            arr1[i] = parseFloat(prompt("Введите элемент [" + i + "]:", ""));
+        }
+
+        document.write("Массив (введён с клавиатуры): " + arr1.join(", ") + "<br>");
+        document.write("Сумма в обратном порядке: <b>" + sumReverse(arr1) + "</b><br><br>");
+
+        // Вариант 2: заданные элементы массива
+        let arr2 = [1, 2, 3, 4, 5];
+        document.write("Массив (задан в коде): " + arr2.join(", ") + "<br>");
+        document.write("Сумма в обратном порядке: <b>" + sumReverse(arr2) + "</b>");
+    </script>
+</body>
+</html>

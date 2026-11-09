@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 7</title>
+</head>
+<body>
+    <h1>Задание 7 — максимальное из двух чисел (дополненное)</h1>
+
+    <script>
+        var x, y;
+        x = parseInt(prompt("Введите значение x", ""));
+        y = parseInt(prompt("Введите значение y", ""));
+
+        // Дополнение: проверка на равенство введённых чисел
+        if (x == y) {
+            alert("Введенные числа равны!");
+            document.write("x = " + x + ", y = " + y + " — числа равны");
+        } else if (x < y) {
+            alert("Максимальное число - y");
+            document.write("Максимальное число - y (" + y + ")");
+        } else {
+            alert("Максимальное число - x");
+            document.write("Максимальное число - x (" + x + ")");
+        }
+    </script>
+</body>
+</html>

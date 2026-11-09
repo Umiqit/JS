@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2 — таблица степеней двойки</title>
+    <script language="JavaScript" type="text/JavaScript" src="task2.js"></script>
+</head>
+<body>
+    <h1>Таблица степеней двойки</h1>
+
+    <table border="1" cellpadding="5">
+        <tr><th>Степень</th><th>Значение</th></tr>
+        <!-- На каждой итерации цикла for формируется очередная строка таблицы -->
+        <script language="JavaScript" type="text/JavaScript">
+            for (var i = 0; i <= 10; i++) {
+                document.write(
+                    "<tr><td>" + i +
+                    "</td><td>" + Math.pow(2, i) + "</td></tr>"
+                );
+            }
+        </script>
+    </table>
+</body>
+</html>

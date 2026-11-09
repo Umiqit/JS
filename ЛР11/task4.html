@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4 — работа со списками</title>
+    <script type="text/javascript" src="task4.js"></script>
+</head>
+<body>
+    <h1>Работа со списками</h1>
+
+    <form name="listForm">
+        Выберите цвет:<br>
+        <select name="colorList" size="1">
+            <option>Черный</option>
+            <option>Оранжевый</option>
+            <option>Белый</option>
+            <option>Зелёный</option>
+            <option>Жёлтый</option>
+            <option>Голубой</option>
+            <option>Багровый</option>
+        </select><br>
+
+        Выберите размер:<br>
+        <select name="sizeList" size="4" multiple>
+            <option>Маленький</option>
+            <option>Средний</option>
+            <option>Большой</option>
+            <option>Огромный</option>
+        </select><br>
+
+        <input type="button" value="Complete" onclick="completeChoice()">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
